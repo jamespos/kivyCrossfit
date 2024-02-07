@@ -1,0 +1,106 @@
+#:import rgba kivy.utils.get_color_from_hex
+#:import md_icons kivymd.icon_definitions.md_icons
+
+MDScreen:
+    ScreenManager:
+        id : screen_manager
+        MDScreen:
+            name: "main"
+            MDFloatLayout:
+                orientation: "vertical"
+                canvas.before:
+                    Color:
+                        rgba: rgba("#495057") # most
+                    Rectangle:
+                        source: 'images/body_image.jpg'
+                        size: root.width, root.height
+                        pos: self.pos
+            MDLabel:
+                text: "Crossfit Workout Selector"
+                markup: True
+                halign: "center"
+                pos_hint: {'center_x': .5, 'center_y': .7}
+                font_size: 70
+                theme_text_color: "Custom"
+                text_color: rgba("#ADB5BD")
+            MDRoundFlatButton:
+                text: "Warm Up"
+                pos_hint: {"x": .2, "y":.4}
+                size_hint: .6, .1
+                font_size: 50
+
+                text_color: "black"
+                md_bg_color: "#27f1f5cc"
+                on_release: app.warm_up()
+            MDRoundFlatButton:
+                text: "Main Workout"
+                pos_hint: {"x": .2, "y":.2}
+                size_hint: .6, .1
+                font_size: 50
+                text_color: "black"
+                md_bg_color: "red"
+                on_release: app.main_workout()
+        MDScreen:
+            name: "warmup"
+            MDFloatLayout:
+                orientation: "vertical"
+                canvas.before:
+                    Color:
+                        rgba: rgba("#495057") # most
+                    Rectangle:
+                        source: 'images/body_image.jpg'
+                        size: root.width, root.height
+                        pos: self.pos
+                Label:
+                    id: textField2
+                    pos_hint: {'center_x': .5, 'center_y': .7}
+                    theme_text_color: "Custom"
+                    font_size: 50
+                MDRoundFlatButton:
+                    text: "Home"
+                    font_size: 50
+                    text_color: "black"
+                    pos_hint: {"x": 0.1, "y":.15}
+                    size_hint: .2, .1
+                    md_bg_color: rgba("#2730f5cc")
+                    on_press: app.home_screen()
+                MDRoundFlatButton:
+                    text: "Get Workout"
+                    font_size: 50
+                    text_color: "black"
+                    pos_hint: {"x": 0.4, "y":.15}
+                    size_hint: .5, .1
+                    md_bg_color: "#27f1f5cc"
+                    on_press: app.reset_warmup()
+
+        MDScreen:
+            name: "mainWorkout"
+            MDFloatLayout:
+                canvas.before:
+                    Color:
+                        rgba: rgba("#495057") # most
+                    Rectangle:
+                        source: 'images/body_image.jpg'
+                        size: root.width, root.height
+                        pos: self.pos
+                Label:
+                    id: textField1
+                    pos_hint: {'center_x': .5, 'center_y': .7}
+                    theme_text_color: "Custom"
+                    font_size: 50
+                MDRoundFlatButton:
+                    text: "Home"
+                    font_size: 50
+                    text_color: "black"
+                    pos_hint: {"x": 0.1, "y":.15}
+                    size_hint: .2, .1
+                    md_bg_color: rgba("#2730f5cc")
+                    on_press: app.home_screen()
+                MDRoundFlatButton:
+                    text: "Get Workout"
+                    font_size: 50
+                    text_color: "black"
+                    pos_hint: {"x": 0.4, "y":.15}
+                    size_hint: .5, .1
+                    md_bg_color: "#27f1f5cc"
+                    on_press: app.reset_main()
