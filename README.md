@@ -1,7 +1,9 @@
 # kivyCrossfit
 ![Picture](/data/dumbell.png)
 
-Crossfit workout app
+## Crossfit workout app
+
+Warm up and main workouts are stored in a database.
 
 This app chooses a crossfit workout for you to complete.
 
