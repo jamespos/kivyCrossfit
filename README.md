@@ -1,4 +1,6 @@
 # kivyCrossfit
+![Picture](data/dumbbell.png)
+
 Crossfit workout app
 
 This app chooses a crossfit workout for you to complete.
