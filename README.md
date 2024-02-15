@@ -1,5 +1,5 @@
 # kivyCrossfit
-![Picture](/data/dumbbell.png)
+![Picture](/data/dumbell.png)
 
 Crossfit workout app
 
